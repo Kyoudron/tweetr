@@ -1,0 +1,49 @@
+/*the white background*/
+
+main {
+  margin: 0 auto;
+  width: 450px;
+  text-align: center;
+  background: white;
+  padding-top: 140px;
+  padding-bottom: 100%;
+}
+
+/*add the gray box around/*/
+section {
+  margin: 0 2em;
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: #eee;
+  padding-bottom: 35px;
+}
+
+
+/*effects the "compose tweet"*/
+.container .new-tweet h2 {
+  text-align: left;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/*tweet button*/
+.container .new-tweet form input {
+  float: left;
+  margin-left: 9px;
+}
+
+/*the counter*/
+
+.container .new-tweet form span {
+  float: right;
+  margin-right: 9px;
+}
+
+/*text box*/
+.container .new-tweet form textarea {
+  padding-left: 95px;
+  padding-right: 95px;
+  text-align: left
+}
