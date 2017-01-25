@@ -5,6 +5,7 @@ nav {
   background-color: #00a087;
   color: #e8fdff;
   padding: 0 2em;
+  overflow: hidden;
 }
 
 #nav-bar .logo {

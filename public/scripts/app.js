@@ -1,66 +1,102 @@
+$(document).ready(function(){
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+ */var data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": {
+        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
+        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+      },
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": {
+        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
+        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+      },
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "Johann von Goethe",
+      "avatars": {
+        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
+        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+      },
+      "handle": "@johann49"
+    },
+    "content": {
+      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+    },
+    "created_at": 1461113796368
+  }
+];
 
 
-/*tweet box post top blue bar*/
-
-.container .single-tweet header {
-  background: lightblue;
-  margin: 0 0 2em 0;
-  border-top: black solid 1px;
-/*  border-left: black solid 1px;
-  border-right: black solid 1px;*/
-  padding-bottom: 1px;
-  border-radius: 5px;
+function renderTweets (data) {
+  $container = $('#tweets-container')
+  data.forEach(function(tweet){
+    let $tweet = createTweetElement(tweet)
+    $container.append($tweet)
+  });
 }
 
-/*bill fields*/
-.container .single-tweet header h1 {
-  float: left;
-  padding-left: 15%;
-  line-height: 10%;
+function createTweetElement(tweet) {
+  let name = tweet.user.name;
+  let avatarSmall = tweet.user.avatars.small;
+  let avatarReg = tweet.user.avatars.regular;
+  let avatarLarge = tweet.user.avatars.large;
+  let handle = tweet.user.handle;
+  let content = tweet.content.text;
+  let time = tweet.created_at;
+
+  let tweety =
+              `<section class="tweets-container">
+                <article class="single-tweet">
+                  <header>
+                    <img class="logo" src=${avatarReg}>
+                    <h1> ${name} </h1>
+                    <h4> ${handle} </h4>
+                  </header>
+                <article class="tweet">
+                  <i name="text"> ${content} </i>
+                </article>
+                <footer>
+                  <div class="date">
+                    <time datetime="2017-01-24 13:45">${time}</time>
+                    <div class="icons">
+                      <i class="fa fa-flag" aria-hidden="true"></i>
+                      <i class="fa fa-retweet" aria-hidden="true"></i>
+                      <i class="fa fa-heart" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </footer>
+              </article>
+            </section>`
+
+  return tweety;
 }
 
-/*@fields*/
-.container .single-tweet header h4 {
-  text-align: right;
-  padding-right: 10px;
-}
 
-/*january 24*/
-.tweetbox .single-tweet footer p {
-  margin: 1em 0 0 0;
-  text-align: left;
-  border-top: solid black 12px;
-  /*border-left: black solid 1px;*/
-  /*border-right: black solid 1px;*/
-  border-bottom: black solid 1px;
-  border-radius: 5px;
-  padding-left: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  background: white;
-}
+renderTweets(data);
 
-/*whole thing*/
-.container .tweetbox {
-  border-left: solid black 1px;
-  border-right: solid black 1px;
-  margin: 0 2em;
-  border-radius: 5px;
-  background: lightblue;
-}
-
-/*white box*/
-.tweetbox .single-tweet i {
-  /*margin: auto 40% auto 0;*/
-  padding-top: 7%;
-  padding-right: 41%;
-  padding-left: 10%;
-  padding-bottom: 7%;
-  text-align: left;
-  background: white;
-}
+})

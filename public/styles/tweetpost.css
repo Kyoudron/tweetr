@@ -1,24 +1,26 @@
-.container .tweetbox {
+.container .single-tweet {
   background: #eee;
   margin: 0 2em;
   border: solid gray 1px;
   border-radius: 5px;
+  overflow: hidden;
 }
 
-.container .tweetbox .single-tweet header h1 {
+.container .single-tweet header h1 {
   text-align: left;
   padding-left: 20%;
   margin: 10px 0 0 0;
+  background: #eee;
 }
 
-.container .tweetbox .single-tweet header h4 {
+.container .single-tweet header h4 {
   text-align: right;
   line-height: 9px;
   margin-bottom: 10px;
   padding-right: 5px;
 }
 
-.tweetbox .single-tweet .tweet {
+.tweets-container .single-tweet .tweet {
   background: white;
   padding: 2em 0;
   line-height: 50px;
@@ -27,7 +29,7 @@
 
 }
 
-.tweetbox .single-tweet .date {
+.tweets-container .single-tweet .date {
   text-align: left;
   padding-left: 5px;
   border-top: solid gray 1px;
@@ -35,7 +37,7 @@
   background: white;
 }
 
-.container .tweetbox .single-tweet .logo {
+.container .tweets-container .single-tweet .logo {
   width: 60px;
   height: 60px;
   float: left;
@@ -44,7 +46,7 @@
   margin-left: 5px;
 }
 
-.tweetbox .single-tweet .icons {
+.tweets-container .single-tweet .icons {
   background: white;
   text-align: right;
   padding-right: 5px;
