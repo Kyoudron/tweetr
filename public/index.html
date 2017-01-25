@@ -31,7 +31,6 @@
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
 
-
   </head>
 
   <body>
@@ -43,43 +42,53 @@
     </nav>
 <!--
  <p>
-      Tumblr before they sold out <strong>letterpress selfies enamel</strong> pin, meggings woke neutra trust fund wolf sartorial put a bird on it photo booth. Marfa asymmetrical swag, single-origin coffee flannel disrupt bicycle rights selfies <a href="#">hell of neutra</a>. Ennui ugh hexagon, paleo vice typewriter jianbing. Coloring book offal heirloom chicharrones, drinking vinegar vape prism jean shorts trust fund keffiyeh truffaut hexagon hammock. Godard letterpress cold-pressed, 90's blue bottle pitchfork distillery retro master cleanse ugh wolf lumbersexual. Knausgaard YOLO lumbersexual, meggings literally whatever kitsch 90's letterpress DIY readymade. Lumbersexual occupy pabst normcore fashion axe.abst normcore fashion axe. </strong>
+
 </p> -->
 </nav>
     <!-- Page-specific (main) content here -->
   <main class="container">
      <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets/">
-        <textarea name="text" placeholder="What are you humming about?"></textarea>
-        <input type="submit" value="Tweet">
+      <form id="container-form" method="POST" action="/tweets/">
+        <textarea id="textTweet" name="text" placeholder="What are you humming about?"></textarea>
+        <input id="submitTweet" type="submit" value="Tweet">
         <span class="counter">140</span>
       </form>
+<!--        <script>
+        $("input").click(function( event ) {
+          event.preventDefault();
+          $("<section>")
+            .append( $(`textarea`).val() )
+            .appendTo( "#tweets-container" );
+        });
+        </script> -->
     </section>
 
     <section id="tweets-container">
-     <!--  <article class="single-tweet">
-        <header>
-          <img class="logo" src="/images/bird.png">
-          <h1> Bill Fields </h1>
-          <h4> @fields </h4 >
-        </header>
-        <article class="tweet">
-          <i name="text"> Random persons tweet in hurrr </i>
-        </article>
-        <footer>
-          <div class="date">
-            <time datetime="2017-01-24 13:45">January 24</time>
-            <div class="icons">
-              <i class="fa fa-flag" aria-hidden="true"></i>
-              <i class="fa fa-retweet" aria-hidden="true"></i>
-              <i class="fa fa-heart" aria-hidden="true"></i>
+        <!--
+        <article class="single-tweet">
+          <header>
+            <img class="logo" src="/images/bird.png">
+            <h1> Bill Fields </h1>
+            <h4> @fields </h4 >
+          </header>
+          <article class="tweet">
+            <i name="text"> Random persons tweet in hurrr </i>
+          </article>
+          <footer>
+            <div class="date">
+              <time datetime="2017-01-24 13:45">January 24</time>
+              <div class="icons">
+                <i class="fa fa-flag" aria-hidden="true"></i>
+                <i class="fa fa-retweet" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-        </footer>
-      </article> -->
+          </footer>
+        </article> -->
     </section>
 
   </main>
   </body>
 </html>
+
