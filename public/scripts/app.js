@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 
 /*
  * Client-side JS logic goes here
@@ -69,11 +69,10 @@ function createTweetElement(tweet) {
   let content = tweet.content.text;
   let time = tweet.created_at;
 
-  let tweety =
-              `<section class="tweets-container">
-                <article class="single-tweet">
+  let html =
+              ` <article class="single-tweet">
                   <header>
-                    <img class="logo" src=${avatarReg}>
+                    <img class="logo" src=${avatarSmall}>
                     <h1> ${name} </h1>
                     <h4> ${handle} </h4>
                   </header>
@@ -90,12 +89,12 @@ function createTweetElement(tweet) {
                     </div>
                   </div>
                 </footer>
-              </article>
-            </section>`
+              </article>`
 
-  return tweety;
+  return html;
 }
 
+$(document).ready(function(){
 
 renderTweets(data);
 

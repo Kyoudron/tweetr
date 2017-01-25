@@ -3,7 +3,7 @@
 main {
   margin: 0 auto;
   width: 450px;
-  text-align: center;
+  /*text-align: center;*/
   background: white;
   padding-top: 140px;
   padding-bottom: 100%;
@@ -43,7 +43,7 @@ main {
 
 /*text box*/
 .container .new-tweet form textarea {
-
+  margin-left: 10px;
   padding-left: 95px;
   padding-right: 95px;
   text-align: left

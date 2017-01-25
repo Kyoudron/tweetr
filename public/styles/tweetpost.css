@@ -1,6 +1,6 @@
 .container .single-tweet {
   background: #eee;
-  margin: 0 2em;
+  margin: 0 2em 1em 2em;
   border: solid gray 1px;
   border-radius: 5px;
   overflow: hidden;
@@ -8,19 +8,25 @@
 
 .container .single-tweet header h1 {
   text-align: left;
-  padding-left: 20%;
-  margin: 10px 0 0 0;
+  vertical-align: top;
+  /*padding-left: 20%;*/
+  margin: 0 20% 0 0;
   background: #eee;
+  display: inline-block;
 }
 
 .container .single-tweet header h4 {
   text-align: right;
-  line-height: 9px;
+  /*line-height: 9px;*/
+  margin-top: 0 0 10px 60px;
   margin-bottom: 10px;
-  padding-right: 5px;
+  margin-left: 60px;
+  line-height: 10px;
+  vertical-align: top;
+  display: inline-block;
 }
 
-.tweets-container .single-tweet .tweet {
+#tweets-container .single-tweet .tweet {
   background: white;
   padding: 2em 0;
   line-height: 50px;
@@ -29,7 +35,7 @@
 
 }
 
-.tweets-container .single-tweet .date {
+#tweets-container .single-tweet .date {
   text-align: left;
   padding-left: 5px;
   border-top: solid gray 1px;
@@ -37,16 +43,19 @@
   background: white;
 }
 
-.container .tweets-container .single-tweet .logo {
+#tweets-container .single-tweet .logo {
   width: 60px;
   height: 60px;
-  float: left;
+  /*margin-right: 80%;*/
+  text-align: left;
+  display: inline-block;
   border-radius: 5px;
-  background:red;
+  /*background:red;*/
   margin-left: 5px;
+  margin-top:5px;
 }
 
-.tweets-container .single-tweet .icons {
+#tweets-container .single-tweet .icons {
   background: white;
   text-align: right;
   padding-right: 5px;
