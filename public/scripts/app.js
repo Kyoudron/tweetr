@@ -51,7 +51,7 @@
  //  }
 
 $(document).ready(function(){
-  fetchTweets()
+  loadTweets()
   let textField
   let form = $('#container-form');
   form.on('submit', function(event) {
@@ -59,21 +59,13 @@ $(document).ready(function(){
     $('#tweets-container').empty();
     $.ajax('/tweets', {method: "post", data: $('#textTweet')})
     .then((result) =>{
-      fetchTweets()
+      loadTweets()
     })
     .fail((error) => console.error(error))
   })
 
-  //     .then((result) => {
-  //       fetchTweets()
-  //   })
-  //     .fail((error) => console.error(error))
-  // })
 
-
-
-
-function fetchTweets() {
+function loadTweets() {
   $.getJSON('/tweets')
   .then((data) => renderTweets(data))
 }
