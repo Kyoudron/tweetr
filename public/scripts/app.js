@@ -51,17 +51,30 @@
  //  }
 
 $(document).ready(function(){
+  $('#tweets-container').empty();
   loadTweets()
   let textField
   let form = $('#container-form');
   form.on('submit', function(event) {
     event.preventDefault();
-    $('#tweets-container').empty();
+      if (document.getElementById("textTweet").value == '') {
+      alert("The text area was left blank.");
+    } if (document.getElementById("textTweet").value.length > 140) {
+      alert("Can only submit upto 140 characters.")
+    }
+
     $.ajax('/tweets', {method: "post", data: $('#textTweet')})
     .then((result) =>{
       loadTweets()
     })
     .fail((error) => console.error(error))
+  })
+
+  $("#compose").click(function() {
+    $(".new-tweet").toggle("fast")
+    $("#textTweet").focus()
+    $(".new-tweet").css('visibility', 'visible')
+
   })
 
 
@@ -75,7 +88,7 @@ function renderTweets (data) {
   $container = $('#tweets-container')
   data.forEach(function(tweet){
     let $tweet = createTweetElement(tweet)
-    $container.append($tweet)
+    $container.prepend($tweet)
   });
 }
 

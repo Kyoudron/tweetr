@@ -21,3 +21,19 @@ nav {
   line-height: 1.5;
 }
 
+#nav-bar div h4 {
+  float: right;
+  margin: 2% 5% 0 0;
+  border: solid black 1px;
+  padding: 15px 15px;
+  border-radius: 5%;
+  background: brown;
+}
+
+#nav-bar div h4 .fa.fa-pencil-square-o {
+  padding-right: 5px;
+}
+
+#nav-bar div h4:hover {
+  background: lightgrey;
+}
