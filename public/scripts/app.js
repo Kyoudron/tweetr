@@ -55,17 +55,22 @@ $(document).ready(function(){
   let textField
   let form = $('#container-form');
   form.on('submit', function(event) {
+    // $('#textTweet').val('');
     event.preventDefault();
       if (document.getElementById("textTweet").value == '') {
       alert("The text area was left blank.");
     } if (document.getElementById("textTweet").value.length > 140) {
       alert("Can only submit upto 140 characters.")
+    } if (document.getElementById("textTweet").value == " "){
+      $('#textTweet').val('');
+      alert("The box was left blank.")
     }
 
     $.ajax('/tweets', {method: "post", data: $('#textTweet')})
     .then((result) =>{
       $('#tweets-container').empty();
       loadTweets()
+      $('#container-form').children('#textTweet').val('')
 
     })
     .fail((error) => console.error(error))
