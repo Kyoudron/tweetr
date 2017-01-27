@@ -51,24 +51,27 @@
  //  }
 
 $(document).ready(function(){
+
   loadTweets()
   let textField
   let form = $('#container-form');
   form.on('submit', function(event) {
     // $('#textTweet').val('');
     event.preventDefault();
+      // document.getElementById("container-form").reset;
       if (document.getElementById("textTweet").value == '') {
       alert("The text area was left blank.");
     } if (document.getElementById("textTweet").value.length > 140) {
       alert("Can only submit upto 140 characters.")
     } if (document.getElementById("textTweet").value == " "){
       $('#textTweet').val('');
-      alert("The box was left blank.")
+      alert("Can't post blank spaces.")
     }
 
     $.ajax('/tweets', {method: "post", data: $('#textTweet')})
     .then((result) =>{
       $('#tweets-container').empty();
+      $('.counter').text(140);
       loadTweets()
       $('#container-form').children('#textTweet').val('')
 
@@ -76,11 +79,10 @@ $(document).ready(function(){
     .fail((error) => console.error(error))
   })
 
-    $("#compose").click(function() {
-    $(".new-tweet").toggle("fast")
+  $("#compose").click(function() {
+    $(".new-tweet").slideToggle("slow")
     $("#textTweet").focus()
     $(".new-tweet").css('visibility', 'visible')
-
   })
 
 
