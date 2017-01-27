@@ -46,8 +46,8 @@ main {
 /*text box*/
 .container .new-tweet form textarea {
   margin-left: 10px;
-  padding-left: 95px;
-  padding-right: 95px;
-  text-align: left
+  /*padding-right: 95px;*/
+  text-align: left;
+  min-width: 365px;
 }
 

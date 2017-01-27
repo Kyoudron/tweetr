@@ -51,7 +51,6 @@
  //  }
 
 $(document).ready(function(){
-  $('#tweets-container').empty();
   loadTweets()
   let textField
   let form = $('#container-form');
@@ -65,12 +64,14 @@ $(document).ready(function(){
 
     $.ajax('/tweets', {method: "post", data: $('#textTweet')})
     .then((result) =>{
+      $('#tweets-container').empty();
       loadTweets()
+
     })
     .fail((error) => console.error(error))
   })
 
-  $("#compose").click(function() {
+    $("#compose").click(function() {
     $(".new-tweet").toggle("fast")
     $("#textTweet").focus()
     $(".new-tweet").css('visibility', 'visible')
@@ -99,7 +100,7 @@ function createTweetElement(tweet) {
   let avatarLarge = tweet.user.avatars.large;
   let handle = tweet.user.handle;
   let content = tweet.content.text;
-  let time = tweet.created_at;
+  let time = $.timeago(tweet.created_at);
 
   let html =
               ` <article class="single-tweet">
@@ -113,7 +114,7 @@ function createTweetElement(tweet) {
                 </article>
                 <footer>
                   <div class="date">
-                    <time datetime="2017-01-24 13:45">${time}</time>
+                    <time>${time}</time>
                     <div class="icons">
                       <i class="fa fa-flag" aria-hidden="true"></i>
                       <i class="fa fa-retweet" aria-hidden="true"></i>
@@ -122,6 +123,22 @@ function createTweetElement(tweet) {
                   </div>
                 </footer>
               </article>`
+
+
+// function msToTime(duration) {
+//     var milliseconds = parseInt((duration%1000)/100)
+//     var seconds = parseInt((duration/1000)%60)
+//     var minutes = parseInt((duration/(1000*60))%60)
+//     var hours = parseInt((duration/(1000*60*60))%24);
+//     var days = parseInt((duration/(1000*60*60*24))%12);
+
+//     hours = (hours < 10) ? "0" + hours : hours;
+//     minutes = (minutes < 10) ? "0" + minutes : minutes;
+//     seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+//     return days + " days and  " + hours + " hours ago.";
+
+// }
 
   return html;
 }
