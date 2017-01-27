@@ -36,53 +36,53 @@ $(document).ready(function(){
   })
 
 
-function loadTweets() {
-  $.getJSON('/tweets')
-  .then((data) => renderTweets(data))
-}
+  function loadTweets() {
+    $.getJSON('/tweets')
+    .then((data) => renderTweets(data))
+  }
 
 
-function renderTweets (data) {
-  $container = $('#tweets-container')
-  data.forEach(function(tweet){
-    let $tweet = createTweetElement(tweet)
-    $container.prepend($tweet)
-  });
-}
+  function renderTweets (data) {
+    $container = $('#tweets-container')
+    data.forEach(function(tweet){
+      let $tweet = createTweetElement(tweet)
+      $container.prepend($tweet)
+    });
+  }
 
-function createTweetElement(tweet) {
-  let name = tweet.user.name;
-  let avatarSmall = tweet.user.avatars.small;
-  let avatarReg = tweet.user.avatars.regular;
-  let avatarLarge = tweet.user.avatars.large;
-  let handle = tweet.user.handle;
-  let content = tweet.content.text;
-  let time = $.timeago(tweet.created_at);
+  function createTweetElement(tweet) {
+    let name = tweet.user.name;
+    let avatarSmall = tweet.user.avatars.small;
+    let avatarReg = tweet.user.avatars.regular;
+    let avatarLarge = tweet.user.avatars.large;
+    let handle = tweet.user.handle;
+    let content = tweet.content.text;
+    let time = $.timeago(tweet.created_at);
 
-  let html =
-              ` <article class="single-tweet">
-                  <header>
-                    <img class="logo" src=${avatarSmall}>
-                    <h1> ${name} </h1>
-                    <h4> ${handle} </h4>
-                  </header>
-                <article class="tweet">
-                  <i name="text"> ${content} </i>
-                </article>
-                <footer>
-                  <div class="date">
-                    <time>${time}</time>
-                    <div class="icons">
-                      <i class="fa fa-flag" aria-hidden="true"></i>
-                      <i class="fa fa-retweet" aria-hidden="true"></i>
-                      <i class="fa fa-heart" aria-hidden="true"></i>
+    let html =
+                ` <article class="single-tweet">
+                    <header>
+                      <img class="logo" src=${avatarSmall}>
+                      <h1> ${name} </h1>
+                      <h4> ${handle} </h4>
+                    </header>
+                  <article class="tweet">
+                    <i name="text"> ${content} </i>
+                  </article>
+                  <footer>
+                    <div class="date">
+                      <time>${time}</time>
+                      <div class="icons">
+                        <i class="fa fa-flag" aria-hidden="true"></i>
+                        <i class="fa fa-retweet" aria-hidden="true"></i>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                      </div>
                     </div>
-                  </div>
-                </footer>
-              </article>`
+                  </footer>
+                </article>`
 
 
-  return html;
-}
+    return html;
+  }
 
 })
