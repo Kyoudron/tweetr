@@ -3,20 +3,20 @@
 main {
   margin: 0 auto;
   width: 68%;
-  /*text-align: center;*/
   background: white;
   padding-top: 140px;
-  padding-bottom: 100%;
+  padding-bottom: 10%;
 }
 
 /*add the gray box around/*/
 .container .new-tweet {
-    background: #eee;
+  background: #eee;
   margin: 0 2em 1em 2em;
   border: solid gray 1px;
   border-radius: 5px;
   overflow: hidden;
   padding-bottom: 2%;
+  display: none;
 }
 
 
@@ -25,9 +25,7 @@ main {
   text-align: left;
   border-bottom: 1px solid #000;
   padding-bottom: 3px;
-  margin-right: 10px;
-  margin-left: 10px;
-  /*padding-left: 10px;*/
+  margin: 1% 3% 2% 3%;
 }
 
 /*tweet button*/
@@ -47,7 +45,6 @@ main {
 .container .new-tweet form textarea {
   margin-left: 3%;
   margin-right: 5%;
-  /*padding-right: 95px;*/
   text-align: left;
   min-width: 94%;
 }

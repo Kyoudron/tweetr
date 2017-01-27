@@ -59,11 +59,9 @@
 #tweets-container .single-tweet .logo {
   width: 60px;
   height: 60px;
-  /*margin-right: 80%;*/
   text-align: left;
   display: inline-block;
   border-radius: 5px;
-  /*background:red;*/
   margin-left: 5px;
   margin-top:5px;
 }
@@ -75,7 +73,6 @@
   padding-right: 5px;
   opacity: 0;
   padding-bottom: 5px;
-  /*width: 10px;*/
 }
 
 #tweets-container .single-tweet:hover .icons {
